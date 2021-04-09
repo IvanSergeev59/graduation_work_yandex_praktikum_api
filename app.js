@@ -12,10 +12,16 @@ const errorHandler = require('./errors/errorHandler');
 const router = require('./routes/index.js');
 const mongoAd = require('./mongo/mongoAd');
 
-const { PORT = 3011 } = process.env;
+const { PORT = 3000 } = process.env;
 const app = express();
 app.use(cors());
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:8082');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, authorization,Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
 
+  next();
+}); 
 app.use(helmet());
 app.use(requestLogger); // подключаем логгер запросов
 app.use(bodyParser.json());
