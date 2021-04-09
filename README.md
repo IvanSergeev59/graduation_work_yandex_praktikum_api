@@ -1,5 +1,6 @@
 # news-explorer-api
 back-end final project
-API:
-https://api.praka59.site/
-http://195.201.233.40/
+
+Main html css js:
+
+https://github.com/IvanSergeev59/graduation_work_yandex_praktikum_html-css_js_adaptive
